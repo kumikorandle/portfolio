@@ -13,3 +13,7 @@ class Technology(models.Model):
     type = models.CharField(max_length=100, choices=TYPE)
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='images/technology')
+
+    def __str__(self):
+        """String representation of the Technology object"""
+        return self.name
