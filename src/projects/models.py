@@ -4,7 +4,7 @@ from technology.models import Technology
 
 import datetime
 
-# # Create your models here.
+# Create your models here.
 class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
