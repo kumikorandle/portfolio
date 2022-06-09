@@ -11,6 +11,13 @@ from .serializers import *
 
 # Create your views here.
 @api_view(["GET"])
+def projects(request):
+    project_data = Project.objects.all()
+    project_serializer = ProjectsSerializer(project_data, context={'request': request}, many=True)
+
+    return Response(status=status.HTTP_200_OK, data={"projects": project_serializer.data})
+
+@api_view(["GET"])
 def project_search(request, pk):
     # Retrieve all projects which use specified technology
     projects = Project.objects.filter(technology__pk=pk)
@@ -29,3 +36,4 @@ def project_detail(request, pk):
     serializer = ProjectsSerializer(project)
     
     return Response(status=status.HTTP_200_OK, data=serializer.data)
+

@@ -18,13 +18,16 @@ from django.urls import path, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 from projects import views as project_views
+from technology import views as tech_views
 from .views import home 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('', home, name='index'),
+    path('projects/', project_views.projects, name='projects'),
+    path('technologies/', tech_views.technologies, name="technologies"),
     path('projects/<int:pk>/', project_views.project_detail, name='project_detail'),
-    path('search/<int:pk>', project_views.project_search, name='project_search')
+    path('search/<int:pk>', project_views.project_search, name='project_search'),
 ]
 
 # if settings.DEBUG:
