@@ -8,11 +8,15 @@ import { BrowserRouter as Router, Route, Link, Routes, BrowserRouter} from "reac
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Project />} />
-        </Routes>
-      </BrowserRouter>
+      <Fragment>
+        <Header />
+        <Project/>
+      </Fragment>
+      // <BrowserRouter>
+      //   <Routes>
+      //     <Route path="/" element={<Project />} />
+      //   </Routes>
+      // </BrowserRouter>
     );
   }
 }

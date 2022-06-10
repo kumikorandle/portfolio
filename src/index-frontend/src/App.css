@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+#header {
+  background: rgb(0,0,0,0.75);
+}
+
+.inline-links {
+  display:inline-block !important;
+}
+
+
