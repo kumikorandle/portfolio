@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Container from 'react-bootstrap/Container'
 import axios from "axios";
 
 export default class Project extends Component {
@@ -26,9 +27,11 @@ export default class Project extends Component {
     render() {
         return (
             <div>
-                <p>Projects</p>
-                {this.state.projects.map((project) => (
-                <h4 key={project.pk}>{project.title}</h4>))}
+                <Container fluid className="screen-size">
+                    <p>Projects</p>
+                    {this.state.projects.map((project) => (
+                    <h4 key={project.pk}>{project.title}</h4>))}
+                </Container>
             </div>
         )
     }
